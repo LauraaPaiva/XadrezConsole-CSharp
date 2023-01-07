@@ -33,8 +33,6 @@ namespace tabuleiro
         }
 
         // Métodos para alocação de peças no tabuleiro
-
-
         public bool posicaoValida(Posicao pos)
         {
             if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna >= colunas)
