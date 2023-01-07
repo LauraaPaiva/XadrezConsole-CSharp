@@ -121,6 +121,16 @@ namespace xadrez_console
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        public static void imprimirInformacoesDoTurno(PartidaDeXadrez partida)
+        {
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.turno);
+            Console.Write("Aguardando jogador: ");
+            Tela.imprimirJogador(partida);
+
+            Console.WriteLine();
+        }
+
         public static void imprimirPartida(PartidaDeXadrez partida)
         {
             Console.Clear();
@@ -130,12 +140,8 @@ namespace xadrez_console
 
             Tela.imprimirPecasCapturadas(partida);
 
-            Console.WriteLine();
-            Console.WriteLine("Turno: " + partida.turno);
-            Console.Write("Aguardando jogador: ");
-            Tela.imprimirJogador(partida);
+            Tela.imprimirInformacoesDoTurno(partida);
 
-            Console.WriteLine();
         }
 
         public static PosicaoXadrez lerPosicaoXadrez()

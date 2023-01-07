@@ -24,9 +24,7 @@ try
 
             Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
 
-            Console.WriteLine();
-            Console.WriteLine("Turno: " + partida.turno);
-            Console.WriteLine("Aguardando jogador: " + partida.jogadorAtual);
+            Tela.imprimirInformacoesDoTurno(partida);
 
             Console.WriteLine();
             Console.Write("Destino: ");
