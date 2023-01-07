@@ -21,5 +21,10 @@ namespace tabuleiro
             this.tabuleiro = tabuleiro;
             quantidadeMovimentos= 0;
         }
+
+        public void incrementarQuantidadeMovimentos()
+        {
+            quantidadeMovimentos++;
+        }
     }
 }
