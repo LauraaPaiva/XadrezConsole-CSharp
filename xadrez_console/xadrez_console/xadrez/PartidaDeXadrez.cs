@@ -20,7 +20,8 @@ namespace xadrez
         {
             tab = new Tabuleiro(8, 8);
             turno = 1;
-            jogadorAtual = Cor.Branca;
+            jogadorAtual = Cor.Azul;
+            terminada = false;
             colocarPecas();
         }
 
@@ -35,7 +36,11 @@ namespace xadrez
         
         private void mudaJogador()
         {
-            if(jogadorAtual == Cor.Vermelha)
+            if(jogadorAtual == Cor.Azul)
+            {
+                jogadorAtual = Cor.Vermelho;
+            }
+            else
             {
                 jogadorAtual = Cor.Azul;
             }
@@ -50,10 +55,10 @@ namespace xadrez
 
         private void colocarPecas()
         {
-            tab.colocarPeca(new Torre(tab, Cor.Vermelha), new PosicaoXadrez('a', 8).toPosicao());
-            tab.colocarPeca(new Torre(tab, Cor.Vermelha), new PosicaoXadrez('b', 8).toPosicao());
-            tab.colocarPeca(new Rei(tab, Cor.Vermelha), new PosicaoXadrez('c', 8).toPosicao());
-            tab.colocarPeca(new Torre(tab, Cor.Vermelha), new PosicaoXadrez('d', 8).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Vermelho), new PosicaoXadrez('a', 8).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Vermelho), new PosicaoXadrez('b', 8).toPosicao());
+            tab.colocarPeca(new Rei(tab, Cor.Vermelho), new PosicaoXadrez('c', 8).toPosicao());
+            tab.colocarPeca(new Torre(tab, Cor.Vermelho), new PosicaoXadrez('d', 8).toPosicao());
             tab.colocarPeca(new Torre(tab, Cor.Azul), new PosicaoXadrez('a', 1).toPosicao());
             tab.colocarPeca(new Torre(tab, Cor.Azul), new PosicaoXadrez('b', 1).toPosicao());
             tab.colocarPeca(new Rei(tab, Cor.Azul), new PosicaoXadrez('c', 1).toPosicao());

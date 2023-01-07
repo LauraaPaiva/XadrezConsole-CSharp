@@ -12,7 +12,7 @@ namespace tabuleiro
         Preta,
         Amarela,
         Azul,
-        Vermelha,
+        Vermelho,
         Verde,
         Laranja
     }

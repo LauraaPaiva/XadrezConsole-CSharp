@@ -22,6 +22,7 @@ namespace xadrez_console
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
+
         }
 
         public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis)
@@ -60,7 +61,7 @@ namespace xadrez_console
             }
             else
             {
-                if (p.cor == Cor.Vermelha)
+                if (p.cor == Cor.Vermelho)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write(p);
