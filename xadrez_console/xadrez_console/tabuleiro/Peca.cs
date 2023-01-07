@@ -7,24 +7,27 @@ using System.Threading.Tasks;
 
 namespace tabuleiro
 {
-    internal class Peca
+    abstract class Peca
     {
         public Posicao posicao { get; set; }
         public Cor cor { get; set; }
         public int quantidadeMovimentos { get; set; }
-        public Tabuleiro tabuleiro { get; protected set; }
+        public Tabuleiro tab { get; protected set; }
 
-        public Peca(Tabuleiro tabuleiro, Cor cor)
+        public Peca(Tabuleiro tab, Cor cor)
         {
             this.posicao = null;
             this.cor = cor;
-            this.tabuleiro = tabuleiro;
-            quantidadeMovimentos= 0;
+            this.tab = tab;
+            quantidadeMovimentos = 0;
         }
 
         public void incrementarQuantidadeMovimentos()
         {
             quantidadeMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis();
+
     }
 }
