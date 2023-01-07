@@ -13,6 +13,7 @@ namespace tabuleiro
         public int colunas { get; set; }
         private Peca[,] pecas;
 
+        //Contrutor do tabuleiro
         public Tabuleiro(int linhas, int colunas)
         {
             this.linhas = linhas;
@@ -20,6 +21,7 @@ namespace tabuleiro
             this.pecas = new Peca[linhas, colunas];
         }
 
+        //Criação de peças no tabuleiro
         public Peca peca(int linha, int coluna)
         {
             return pecas[linha, coluna];
@@ -30,17 +32,8 @@ namespace tabuleiro
             return pecas[pos.linha, pos.coluna];
         }
 
-        public bool existePeca(Posicao pos)
-        {
-            validarPosicao(pos);
-            return peca(pos) != null;
-        }
+        // Métodos para alocação de peças no tabuleiro
 
-        public void colocarPeca(Peca p, Posicao pos)
-        {
-            pecas[pos.linha, pos.coluna] = p;
-            p.posicao = pos;
-        }
 
         public bool posicaoValida(Posicao pos)
         {
@@ -55,8 +48,24 @@ namespace tabuleiro
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posição inválida!");
+                throw new TabuleiroException("A posição " + pos.ToString() + " é inválida!");
             }
+        }
+
+        public bool existePeca(Posicao pos)
+        {
+            validarPosicao(pos);
+            return peca(pos) != null;
+        }
+
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            if (existePeca(pos))
+            {
+                throw new TabuleiroException("Já existe uma peça na posição " + pos.ToString());
+            }
+            pecas[pos.linha, pos.coluna] = p;
+            p.posicao = pos;
         }
 
     }
